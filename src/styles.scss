@@ -1,0 +1,71 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+@import './app/styles/variables.scss';
+@import './app/styles/theme.scss';
+
+body{
+    margin: 0;
+    font: 400 15px/20px Poppins;
+}
+
+mat-toolbar{
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    background: $white;
+    border-bottom: 1px solid lightgrey;
+    box-shadow: 0 1px 1px -2px rgb(0 0 0 / 20%), 0 1px 1px 0 rgb(0 0 0 / 14%), 0 0px 1px 0 rgb(0 0 0 / 12%);
+}
+
+.d-flex{
+    display: flex;
+}
+
+input{
+    border: none;
+    outline: 0;
+    width: 250px;
+    border-bottom: 1px solid $black;
+    padding: 5px;
+    background: none;
+    margin-bottom: 10px;
+}
+
+input::placeholder {
+    font-family: Poppins;
+}
+
+.nat-container{
+    background: $body_bg;
+    padding: 15px 20px 5px 20px;
+}
+
+button{
+    background-color: $primary;
+    color: $white;
+    font-family: Poppins;
+}
+
+.primary-btn{
+    box-shadow: 0 3px 1px -2px rgb(0 0 0 / 20%), 0 2px 2px 0 rgb(0 0 0 / 14%), 0 1px 5px 0 rgb(0 0 0 / 12%);
+    padding: 0 12px;
+    font-size: $medium-font;
+    line-height: 32px;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    border-radius: 4px;   
+    
+    &:disabled{
+        background-color: grey;
+        cursor: default;
+    }
+}
+
+.btn-container{
+    align-self: center;
+}
+
+textarea{
+    resize: none;
+}

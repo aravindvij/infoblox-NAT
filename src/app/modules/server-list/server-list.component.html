@@ -1,0 +1,36 @@
+<div class="nat-container">
+    <header class="d-flex">
+        <h3>Servers</h3>
+        <div class="btn-container">
+            <button class="primary-btn" (click)="createServer()" [disabled]="checked">Create Server</button>
+            <button class="primary-btn" (click)="createServer()" [disabled]="multipleChecked">Edit</button>
+            <button class="primary-btn" (click)="removeServer()" [disabled]="!checked">Remove</button>
+        </div>
+    </header>
+    <div class="d-flex">
+        <mat-icon>search</mat-icon>
+        <input matInput placeholder="Search" [(ngModel)]="searchServer"/>
+    </div>
+    <h4>All Serves</h4>
+    <div class="card-container">
+        <mat-card [ngClass]="{'online': server.status === 'online',
+         'pending': server.status === 'pending',
+        'error': server.status === 'error'}" 
+        *ngFor="let server of serverList | filterServers: searchServer; let i = index">
+            <div>
+            <div>    
+            <mat-checkbox color="primary" (change)="onSelection($event.checked, server)"></mat-checkbox>   
+            </div> 
+            <div>
+            <h4>{{server.name}}</h4>
+            <div>{{server.description}}</div>
+            </div>
+            </div>
+            <div class="btn-wrapper">
+                <button class="primary-btn" (click)="createServer(server)">Edit</button>
+                <button class="primary-btn" (click)="removeServer(i)">Remove</button>
+            </div>
+        </mat-card>
+    </div>
+</div>
+
