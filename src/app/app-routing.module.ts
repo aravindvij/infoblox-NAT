@@ -4,7 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: 'serverList',
-    loadChildren: () => import('./modules/server-list/data-list.module').then(m => m.DataListModule)
+    loadChildren: () => import('./modules/data-list/data-list.module').then(m => m.DataListModule)
   }
 ];
 

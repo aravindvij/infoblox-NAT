@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SharedModule } from './shared/shared.module';
-import { DataListModule } from './modules/server-list/data-list.module';
+import { DataListModule } from './modules/data-list/data-list.module';
 
 @NgModule({
   declarations: [
