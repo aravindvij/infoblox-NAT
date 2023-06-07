@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ApiServiceService } from 'src/app/core/service/api-service.service';
-import { CreateServerDialogComponent } from './create-server-dialog/create-server-dialog.component';
-import { ServerDataService } from './server-data.service';
+import { CreateItemDialogComponent } from './create-item-dialog/create-item-dialog.component';
+import { DataService } from './data.service';
 
 export interface DataList{
   name: string,
@@ -15,12 +15,12 @@ export interface DataList{
 }
 
 @Component({
-  selector: 'app-server-list',
-  templateUrl: './server-list.component.html',
-  styleUrls: ['./server-list.component.scss'],
-  providers: [ServerDataService]
+  selector: 'app-data-list',
+  templateUrl: './data-list.component.html',
+  styleUrls: ['./data-list.component.scss'],
+  providers: [DataService]
 })
-export class ServerListComponent implements OnInit {
+export class DataListComponent implements OnInit {
 
   dataList:Array<DataList> = [];
   searchData: String = '';
@@ -29,7 +29,7 @@ export class ServerListComponent implements OnInit {
   multipleChecked = true;
   
   constructor(private apiService: ApiServiceService, private dialog: MatDialog, 
-    private dataService: ServerDataService) { }
+    private dataService: DataService) { }
 
   ngOnInit(): void {
     this.fetchDataList();
@@ -40,7 +40,7 @@ export class ServerListComponent implements OnInit {
   }
 
   createItem(itemData?: any){
-    const dialogRef = this.dialog.open(CreateServerDialogComponent, {
+    const dialogRef = this.dialog.open(CreateItemDialogComponent, {
       width: '50%',
       data: this.selectedItems && this.selectedItems.length > 0 ? this.selectedItems[0] : itemData ? itemData : null
     });
@@ -57,7 +57,7 @@ export class ServerListComponent implements OnInit {
   }
 
   removeItem(index?: number){
-    if(index){
+    if(index !== undefined){
     this.dataList.splice(index,1);
     } else{
       this.selectedItems.map(item => {

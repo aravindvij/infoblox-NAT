@@ -1,27 +1,27 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { ServerListRoutingModule } from './server-list-routing.module';
-import { ServerListComponent } from './server-list.component';
+import { DataListRoutingModule } from './data-list-routing.module';
+import { DataListComponent } from './data-list.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { FilterPipe } from 'src/app/core/filterPipe';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { CreateServerDialogComponent } from './create-server-dialog/create-server-dialog.component';
-import { ServerDataService } from './server-data.service';
+import { CreateItemDialogComponent } from './create-item-dialog/create-item-dialog.component';
+import { DataService } from './data.service';
 
 
 @NgModule({
   declarations: [
-    ServerListComponent,
+    DataListComponent,
     FilterPipe,
-    CreateServerDialogComponent
+    CreateItemDialogComponent
   ],
   imports: [
     CommonModule,
-    ServerListRoutingModule,
+    DataListRoutingModule,
     SharedModule,
     FormsModule,
     ReactiveFormsModule
   ]
 })
-export class ServerListModule { }
+export class DataListModule { }

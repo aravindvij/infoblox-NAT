@@ -5,9 +5,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
-import { ServerListModule } from './modules/server-list/server-list.module';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SharedModule } from './shared/shared.module';
+import { DataListModule } from './modules/server-list/data-list.module';
 
 @NgModule({
   declarations: [
@@ -17,7 +17,7 @@ import { SharedModule } from './shared/shared.module';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    ServerListModule,
+    DataListModule,
     AppRoutingModule,
     CoreModule,
     SharedModule

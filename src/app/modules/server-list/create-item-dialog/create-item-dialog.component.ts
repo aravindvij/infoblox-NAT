@@ -3,11 +3,11 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 
 @Component({
-  selector: 'app-create-server-dialog',
-  templateUrl: './create-server-dialog.component.html',
-  styleUrls: ['./create-server-dialog.component.scss']
+  selector: 'app-create-item-dialog',
+  templateUrl: './create-item-dialog.component.html',
+  styleUrls: ['./create-item-dialog.component.scss']
 })
-export class CreateServerDialogComponent implements OnInit {
+export class CreateItemDialogComponent implements OnInit {
 
   nat_space_data = [
     {
@@ -43,7 +43,7 @@ export class CreateServerDialogComponent implements OnInit {
     ipAddress: new FormControl({value: '', disabled: true}, [Validators.pattern('^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$')]),
   });
 
-  constructor(public dialogRef: MatDialogRef<CreateServerDialogComponent>,
+  constructor(public dialogRef: MatDialogRef<CreateItemDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any) { }
 
   ngOnInit(): void {
