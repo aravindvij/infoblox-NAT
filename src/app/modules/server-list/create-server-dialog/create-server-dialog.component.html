@@ -15,7 +15,7 @@
   <mat-form-field appearance="outline">
     <mat-label>NAT Space</mat-label>
   <mat-select placeholder="NAT Space" formControlName="natSpace" (selectionChange)="natSpaceSelection($event)">
-    <mat-option *ngFor="let option of nat_space_data" [value]="option" >
+    <mat-option *ngFor="let option of nat_space_data" [value]="option">
         {{option.name}}
     </mat-option>
   </mat-select>
@@ -27,7 +27,7 @@
   <mat-error *ngIf="this.createServerForm.get('ipAddress')?.hasError('pattern')">IP Address is wrong</mat-error>
   </mat-form-field>
 
-  <button class="primary-btn" type="submit">Create</button>
+  <button class="primary-btn" type="submit" [disabled]="createServerForm.invalid">{{data ? 'Update' : 'Create'}}</button>
   </form>
 </mat-dialog-content>
 

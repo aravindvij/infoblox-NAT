@@ -7,6 +7,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import { FilterPipe } from 'src/app/core/filterPipe';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CreateServerDialogComponent } from './create-server-dialog/create-server-dialog.component';
+import { ServerDataService } from './server-data.service';
 
 
 @NgModule({

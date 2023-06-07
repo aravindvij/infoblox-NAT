@@ -1,34 +1,34 @@
-<div class="nat-container">
+<div class="content-container">
     <header class="d-flex">
-        <h3>Servers</h3>
+        <h3>Data</h3>
         <div class="btn-container">
-            <button class="primary-btn" (click)="createServer()" [disabled]="checked">Create Server</button>
-            <button class="primary-btn" (click)="createServer()" [disabled]="multipleChecked">Edit</button>
-            <button class="primary-btn" (click)="removeServer()" [disabled]="!checked">Remove</button>
+            <button class="primary-btn" (click)="createItem()" [disabled]="checked">Create Server</button>
+            <button class="primary-btn" (click)="createItem()" [disabled]="multipleChecked">Edit</button>
+            <button class="primary-btn" (click)="removeItem()" [disabled]="!checked">Remove</button>
         </div>
     </header>
     <div class="d-flex">
         <mat-icon>search</mat-icon>
-        <input matInput placeholder="Search" [(ngModel)]="searchServer"/>
+        <input matInput placeholder="Search" [(ngModel)]="searchData"/>
     </div>
     <h4>All Serves</h4>
     <div class="card-container">
-        <mat-card [ngClass]="{'online': server.status === 'online',
-         'pending': server.status === 'pending',
-        'error': server.status === 'error'}" 
-        *ngFor="let server of serverList | filterServers: searchServer; let i = index">
+        <mat-card [ngClass]="{'online': item.status === 'online',
+         'pending': item.status === 'pending',
+        'error': item.status === 'error'}" 
+        *ngFor="let item of dataList | filterPipe: searchData; let i = index">
             <div>
             <div>    
-            <mat-checkbox color="primary" (change)="onSelection($event.checked, server)"></mat-checkbox>   
+            <mat-checkbox color="primary" (change)="onSelection($event.checked, item)"></mat-checkbox>   
             </div> 
             <div>
-            <h4>{{server.name}}</h4>
-            <div>{{server.description}}</div>
+            <h4>{{item.name}}</h4>
+            <div>{{item.description}}</div>
             </div>
             </div>
             <div class="btn-wrapper">
-                <button class="primary-btn" (click)="createServer(server)">Edit</button>
-                <button class="primary-btn" (click)="removeServer(i)">Remove</button>
+                <button class="primary-btn" (click)="createItem(item)">Edit</button>
+                <button class="primary-btn" (click)="removeItem(i)">Remove</button>
             </div>
         </mat-card>
     </div>

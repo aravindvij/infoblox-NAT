@@ -5,11 +5,11 @@ import { ServerListComponent } from './server-list.component';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'serverList',
+    redirectTo: 'dataList',
     pathMatch: 'full'
   },
   {
-    path: 'serverList',
+    path: 'dataList',
     component: ServerListComponent
   }
 ];
