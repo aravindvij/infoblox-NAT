@@ -6,6 +6,7 @@ import { ServerDataService } from './server-data.service';
 
 export interface DataList{
   name: string,
+  id: number,
   description: string,
   server_ip: string,
   nat_space_id: string,
@@ -45,7 +46,12 @@ export class ServerListComponent implements OnInit {
     });
    dialogRef.afterClosed().subscribe((res: any) => {
       if (res) {
-        this.dataList = this.dataList.concat(res);
+          const itemIndex = this.dataList.findIndex(item => item.id === res.id); 
+          if(itemIndex > -1){
+            this.dataList[itemIndex] = res;
+          } else{
+            this.dataList = this.dataList.concat(res);
+        }
       }
     });
   }

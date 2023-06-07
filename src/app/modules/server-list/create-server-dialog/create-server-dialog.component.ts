@@ -76,9 +76,9 @@ export class CreateServerDialogComponent implements OnInit {
       server_nat_ip: this.createServerForm.get('natSpace')?.value,
       nat_space_id: this.createServerForm.get('natSpace')?.value,
       server_ip: this.createServerForm.get('ipAddress')?.value,
-      status: 'pending'
+      status: this.data && this.data.status ? this.data.status: 'pending',
+      id: this.data && this.data.id ? this.data.id: null
     }
-    console.log(payload);
     this.dialogRef.close(payload);
   }
 

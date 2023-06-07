@@ -8,7 +8,7 @@ export class ServerDataService {
   data = [
     {
     "name": "Box",
-    "id": "1",
+    "id": 1,
     "description": "xyz lorem 324 got boty doty",
     "server_ip": "10.19.19.23",
     "nat_space_id": "12",
@@ -17,7 +17,7 @@ export class ServerDataService {
     },
     {
     "name": "DoS",
-    "id": "2",
+    "id": 2,
     "description": "Server Box xyz lorem 324 got boty doty",
     "server_ip": "10.19.19.23",
     "nat_space_id": "1",
@@ -26,7 +26,7 @@ export class ServerDataService {
     },
     {
     "name": "Server Box",
-    "id": "3",
+    "id": 3,
     "description": " 10.013.122-xyz lorem 324 got boty doty",
     "server_ip": "10.19.19.23",
     "nat_space_id": "12",
@@ -35,7 +35,7 @@ export class ServerDataService {
     },
     {
     "name": "Nat-vat",
-    "id": "4",
+    "id": 4,
     "description": "xyz lorem 324 got boty doty",
     "server_ip": "10.19.19.23",
     "nat_space_id": "15",
@@ -44,7 +44,7 @@ export class ServerDataService {
     },
     {
     "name": "ZTh-vtc-1275844",
-    "id": "5",
+    "id": 5,
     "description": "xyz lorem 324 got boty doty",
     "server_ip": "10.19.19.23",
     "nat_space_id": "14",
@@ -54,7 +54,7 @@ export class ServerDataService {
     },
     {
     "name": "Box test",
-    "id": "6",
+    "id": 6,
     "description": "xyz lorem 324 got boty doty",
     "server_ip": "10.19.19.23",
     "nat_space_id": "13",
